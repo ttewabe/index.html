@@ -5,10 +5,40 @@ Week 4 Overview
     Overview: Bootstrap and jQuery
     it was JS library 
     Exercise: Bootstrap and jQuery Part 1
-    
+    Initializes the carousel with an optional options object and starts cycling through items. Bootstrap first page.  
+            $('.carousel').carousel({ interval: 2000})
+    To pause and play we can use this script for different columns 
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselPause").click(function(){
+                $(".carousel").carousel("pause");
+            });
+            $("#carouselPlay").click(function(){
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
     Exercises: Bootstrap and jQuery Part 2
+     <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
+            });
+        });
+    </script>
 CSS Preprocessors
     Overview: CSS Preprocessors
+    
     Exercise: Scss
 Building and Deployment
     Overview: Building and Deployment
